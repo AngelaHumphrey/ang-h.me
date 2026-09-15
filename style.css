@@ -1,0 +1,49 @@
+* {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+/* Adapted from https://www.w3schools.com/css/css3_fonts.asp
+    Font from https://www.fontspace.com/bold-uo-font-f166357
+*/
+
+@font-face {
+    font-family: Train Font;
+    src: url('stuff/BoldodemoRegular.otf');
+}
+
+
+/*  Train animation inspired by https://anapolisis.neocities.org
+    Learned how animations work from https://www.w3schools.com/css/css3_animations.asp
+        and https://www.w3schools.com/htmlcss/htmlcss_animations.asp
+    This method defines the animation with its attributes at the start/end points, then
+        applies it to the element and tells it the durration, easing, and loop count
+*/
+
+@keyframes scrollAnimation {
+    from {
+        transform: translateX(120%); 		
+    }
+    to {
+        transform: translateX(-20%); 
+    }
+}
+
+h1 {
+    color: navy;
+    text-align: center;
+    font-size: 60px;
+}
+
+.scroll {
+    animation: scrollAnimation 10s linear infinite;
+}
+
+.scroll img {
+    height: 60px;
+            }
+
+            .scroll p {
+                font-size: 70px;
+                font-family: 'Train Font';
+                display: inline;
+            }
