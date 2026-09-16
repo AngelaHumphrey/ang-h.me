@@ -1,14 +1,23 @@
 * {
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    /* White Paper Airplane - https://www.cursors-4u.com/cursor/white-paper-airplane
+    cursor: url('https://cdn.cursors-4u.net/previews/paper-airplane-19477b19-32.webp') 32 32, auto !important; */
+    
+    font-family: 'Rusty Hooks';
+    color: navy;
 }
 
 /* Adapted from https://www.w3schools.com/css/css3_fonts.asp
-    Font from https://www.fontspace.com/bold-uo-font-f166357
+    Fonts from https://www.fontspace.com/bold-uo-font-f166357
+        and https://www.fontspace.com/rusty-hooks-font-f87577
 */
-
 @font-face {
     font-family: Train Font;
     src: url('stuff/BoldodemoRegular.otf');
+}
+
+@font-face {
+    font-family: Rusty Hooks;
+    src: url('stuff/RustyHooksRegular-nROER.ttf');
 }
 
 
@@ -18,20 +27,71 @@
     This method defines the animation with its attributes at the start/end points, then
         applies it to the element and tells it the durration, easing, and loop count
 */
-
 @keyframes scrollAnimation {
     from {
         transform: translateX(120%); 		
     }
     to {
-        transform: translateX(-20%); 
+        transform: translateX(-50%); 
     }
 }
 
+/* adapted from https://stackoverflow.com/questions/17756649/disable-the-horizontal-scroll
+   this ensures that the page width doesn't exceed 100% and that any horizontal overflow is hidden 
+        (so that there is no horizontal scroll bar when the train goes offscreen)
+*/
+body {
+    max-width: 100%;
+    max-height: 100%;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    margin: 0%;
+    background-image: url('stuff/background.png');
+    background-size: 100%;
+}
+
 h1 {
-    color: navy;
     text-align: center;
     font-size: 60px;
+}
+
+h3 {
+    display: inline;
+}
+
+a {
+    color:#C90C74
+}
+
+audio {
+    display: flex;
+    justify-self: center;
+    position: fixed;
+    bottom: 15px;
+}
+
+input {
+    border: none;
+    background-color: #82c105;
+    border-radius: 10px;
+    margin: 10px;
+    text-align: center;
+    display: inline;
+}
+
+button {
+    width:max-content;
+    background-color:navy;
+    color:white;
+    display: flex;
+    border-radius: 10px;
+    border:none;
+}
+
+
+button:hover {
+    background-color: rgb(0, 0, 87);
+    color: lightgray;
 }
 
 .scroll {
@@ -39,11 +99,32 @@ h1 {
 }
 
 .scroll img {
-    height: 60px;
-            }
+    height: 65px;
+}
 
-            .scroll p {
-                font-size: 70px;
-                font-family: 'Train Font';
-                display: inline;
-            }
+.scroll p {
+    font-size: 75px;
+    font-family: 'Train Font';
+    display: inline;
+}
+
+.container {
+    /* referenced this guide: https://css-tricks.com/snippets/css/a-guide-to-flexbox/
+    */
+    display: flex;
+    flex-direction:row;
+    justify-content: center;
+}
+
+
+#stack {
+    display: flex;
+    flex-direction:column;
+    justify-content: center;
+    justify-self: center;
+}
+
+.box {
+    padding: 35px;
+    line-height: 150%;
+}

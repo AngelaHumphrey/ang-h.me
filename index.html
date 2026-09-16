@@ -16,7 +16,58 @@
                 <p style="color:#C90C74">L</p>
                 <p style="color:#C8FF23">A </p>
                 <img src="stuff/caboose.png">
+                <p id="name"></p>
+                <img id="car" style="visibility:hidden;" src="stuff/caboose.png">
             </p>
         </div>
+
+        <div class="container" style="width: 100%;">
+            <details class="box">
+                <summary><h3> About Me </h3></summary>
+                <ul>
+                    <li>'29</li>
+                    <li>Cog Sci major</li>
+                    <li>CS/Edu minor</li>
+                </ul>
+            </details>
+            <details class="box">
+                <summary><h3> Clubs & Activities! </h3></summary>
+                <ul>
+                    <li><a href="https://www.spareribdartmouth.com/" target="_blank">Spare Rib</a></li>
+                    <li><a href="https://sites.dartmouth.edu/kraemerlab/" target="_blank">Kraemer Lab</a></li>
+                    <li><a href="https://www.instagram.com/dartylittlegreen/" target="_blank">Little Green</a></li>
+                </ul>
+            </details>
+            <details class="box">
+                <summary><h3> Cool Websites </h3></summary>
+                <ul>
+                    <li><a href="https://findtheinvisiblecow.com/" target="_blank">findtheinvisiblecow.com</a></li>
+                    <li><a href="https://www.playphrase.me/" target="_blank">playphrase.me</a></li>
+                    <li><a href="https://cloudgazing.online/" target="_blank">cloudgazing.online</a></li>
+                </ul>
+            </details>
+
+        </div>
+        
+        <div id="stack">
+            <div class="container">
+                <input type="text" id="newName">
+                <input type="color" id="newColor" value="#ae16e0">
+            </div>
+            <button onclick="addName()"> add your name to the train! </button>
+        </div>
+        
+        <audio src="stuff/freesound_community-garden-sunny-day-54490.mp3" controls loop></audio>
+
+        <script>
+
+            // Adapted from https://stackoverflow.com/questions/33203173/change-innerhtml-on-button-click
+            // changes the HTML contained within the 'name' element to the name provided in the input element
+            function addName() {
+                document.getElementById('car').setAttribute("style", "visibility:visible")
+                document.getElementById('name').setAttribute("style", "color:"+document.getElementById('newColor').value);
+                document.getElementById('name').innerHTML = document.getElementById('newName').value + " ";
+            }
+        </script>
     </body>
 </html>
